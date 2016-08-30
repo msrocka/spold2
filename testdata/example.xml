@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecoSpold xmlns="http://www.EcoInvent.org/EcoSpold02">
+  <activityDataset>
+    <activityDescription>
+      <activity 
+        id="0b647620-42e0-49d6-abd5-9cdde1b8fb01" 
+        activityNameId="841a0b7f-3818-4259-a26f-e523869fead1" 
+        type="1" 
+        specialActivityType="0">
+        <activityName xml:lang="en">Test activity data set</activityName>
+        <generalComment>
+          <text index="1" xml:lang="en">Just for tests</text>
+        </generalComment>
+      </activity>
+	  <classification classificationId="072976da-35f1-4afe-bad1-dbb458efcd1e">
+        <classificationSystem xml:lang="en">ISIC rev.4 ecoinvent</classificationSystem>
+        <classificationValue xml:lang="en">2399:Manufacture of other non-metallic mineral products n.e.c.</classificationValue>
+      </classification>
+      <classification classificationId="a82c98c0-1e7e-495d-bad9-8b6d0d12e5c5">
+        <classificationSystem xml:lang="en">EcoSpold01Categories</classificationSystem>
+        <classificationValue xml:lang="en">construction materials/concrete</classificationValue>
+      </classification>
+      <geography geographyId="34dbbff8-88ce-11de-ad60-0019e336be3a">
+        <shortname xml:lang="en">GLO</shortname>
+        <comment>
+          <text index="1" xml:lang="en">Global data set</text>
+        </comment>
+      </geography>
+      <technology technologyLevel="0">
+        <comment>
+          <text index="1" xml:lang="en">tech. desc.</text>
+        </comment>
+      </technology>
+      <timePeriod startDate="2016-03-04" endDate="2016-03-25" isDataValidForEntirePeriod="true">
+        <comment>
+          <text index="1" xml:lang="en">Time description</text>
+        </comment>
+      </timePeriod>
+      <macroEconomicScenario macroEconomicScenarioId="d9f57f0a-a01f-42eb-a57b-8f18d6635801">
+        <name xml:lang="en">Business-as-Usual</name>
+      </macroEconomicScenario>
+    </activityDescription>
+    <flowData>
+      <intermediateExchange intermediateExchangeId="45c9ecb0-6760-4d68-b8f0-c04a208856f3" id="00000000-0000-9b02-0000-000000000000" unitId="487df68b-4994-4027-8fdc-a4dc298257b7" amount="1.0">
+        <name xml:lang="en">Test product flow</name>
+        <unitName xml:lang="en">kg</unitName>
+        <outputGroup>0</outputGroup>
+      </intermediateExchange>
+      <elementaryExchange id="00000000-0000-9b03-0000-000000000000" unitId="487df68b-4994-4027-8fdc-a4dc298257b7" amount="24.0" casNumber="000630-20-6" elementaryExchangeId="e3abf13f-3bb9-4e52-b72b-9bd276625c55">
+        <name xml:lang="en">1,1,1,2-Tetrachloroethane</name>
+        <unitName xml:lang="en">kg</unitName>
+        <compartment subcompartmentId="e8d7772c-55ca-4dd7-b605-fee5ae764578">
+          <compartment xml:lang="en">air</compartment>
+          <subcompartment xml:lang="en">urban air close to ground</subcompartment>
+        </compartment>
+        <outputGroup>4</outputGroup>
+      </elementaryExchange>
+      <elementaryExchange id="00000000-0000-9b04-0000-000000000000" unitId="487df68b-4994-4027-8fdc-a4dc298257b7" amount="42.0" casNumber="007782-50-5" elementaryExchangeId="46fe6694-560b-4e2f-b1b8-25d451a6e1d8" formula="Cl2">
+        <name xml:lang="en">Chlorine</name>
+        <unitName xml:lang="en">kg</unitName>
+        <compartment subcompartmentId="30347aef-a90b-46ba-8746-b53741aa779d">
+          <compartment xml:lang="en">natural resource</compartment>
+          <subcompartment xml:lang="en">in water</subcompartment>
+        </compartment>
+        <inputGroup>4</inputGroup>
+      </elementaryExchange>
+    </flowData>
+    <modellingAndValidation>
+      <representativeness systemModelId="06590a66-662a-4885-8494-ad0cf410f956">
+        <systemModelName xml:lang="en">Allocation, ecoinvent default</systemModelName>
+      </representativeness>
+    </modellingAndValidation>
+    <administrativeInformation>
+      <dataEntryBy personId="788d0176-a69c-4de0-a5d3-259866b6b100" isActiveAuthor="false" personName="[Current User]" personEmail="no@email.com"/>
+      <dataGeneratorAndPublication personId="788d0176-a69c-4de0-a5d3-259866b6b100" personName="[Current User]" personEmail="no@email.com" isCopyrightProtected="false"/>
+      <fileAttributes majorRelease="1" minorRelease="5" majorRevision="0" minorRevision="0" defaultLanguage="en" creationTimestamp="2016-03-04T16:10:23" lastEditTimestamp="2016-03-04T16:12:17" internalSchemaVersion="1.0" fileGenerator="openLCA" fileTimestamp="2016-03-04T16:12:45"/>
+    </administrativeInformation>
+  </activityDataset>
+  <usedUserMasterData xmlns="http://www.EcoInvent.org/UsedUserMasterData">
+    <activityName id="841a0b7f-3818-4259-a26f-e523869fead1">
+      <name xml:lang="en">Test activity data set</name>
+    </activityName>
+    <elementaryExchange id="e3abf13f-3bb9-4e52-b72b-9bd276625c55" unitId="487df68b-4994-4027-8fdc-a4dc298257b7" casNumber="000630-20-6">
+      <name xml:lang="en">1,1,1,2-Tetrachloroethane</name>
+      <unitName xml:lang="en">kg</unitName>
+      <compartment xmlns="http://www.EcoInvent.org/EcoSpold02" subcompartmentId="e8d7772c-55ca-4dd7-b605-fee5ae764578">
+        <compartment xml:lang="en">air</compartment>
+        <subcompartment xml:lang="en">urban air close to ground</subcompartment>
+      </compartment>
+    </elementaryExchange>
+    <elementaryExchange id="46fe6694-560b-4e2f-b1b8-25d451a6e1d8" unitId="487df68b-4994-4027-8fdc-a4dc298257b7" casNumber="007782-50-5" formula="Cl2">
+      <name xml:lang="en">Chlorine</name>
+      <unitName xml:lang="en">kg</unitName>
+      <compartment xmlns="http://www.EcoInvent.org/EcoSpold02" subcompartmentId="30347aef-a90b-46ba-8746-b53741aa779d">
+        <compartment xml:lang="en">natural resource</compartment>
+        <subcompartment xml:lang="en">in water</subcompartment>
+      </compartment>
+    </elementaryExchange>
+    <intermediateExchange id="45c9ecb0-6760-4d68-b8f0-c04a208856f3" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+      <name xml:lang="en">Test product flow</name>
+      <unitName xml:lang="en">kg</unitName>
+    </intermediateExchange>
+    <activityIndexEntry id="0b647620-42e0-49d6-abd5-9cdde1b8fb01" activityNameId="841a0b7f-3818-4259-a26f-e523869fead1" geographyId="34dbbff8-88ce-11de-ad60-0019e336be3a" startDate="2016-03-04T16:12:45" endDate="2016-03-25T16:11:14" systemModelId="8b738ea0-f89e-4627-8679-433616064e82"/>
+  </usedUserMasterData>
+</ecoSpold>
