@@ -2,12 +2,11 @@ package spold2
 
 import (
 	"encoding/xml"
-	"io/ioutil"
 	"testing"
 )
 
 func TestReadModel(t *testing.T) {
-	spold := readExample()
+	spold := example(t)
 	if spold.DataSet.Description.ID != "0b647620-42e0-49d6-abd5-9cdde1b8fb01" {
 		t.Error("Failed to read data set ID")
 		return
@@ -21,7 +20,7 @@ func TestReadModel(t *testing.T) {
 }
 
 func TestElementaryExchanges(t *testing.T) {
-	spold := readExample()
+	spold := example(t)
 	if spold.DataSet.FlowData == nil {
 		t.Error("No flow data")
 	}
@@ -30,9 +29,10 @@ func TestElementaryExchanges(t *testing.T) {
 	}
 }
 
-func readExample() *EcoSpold {
-	data, _ := ioutil.ReadFile("./testdata/example.xml")
-	spold := &EcoSpold{}
-	xml.Unmarshal(data, spold)
+func example(t *testing.T) *EcoSpold {
+	spold, err := ReadFile("./testdata/example.xml")
+	if err != nil {
+		t.Error(err)
+	}
 	return spold
 }
