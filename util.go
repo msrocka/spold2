@@ -58,9 +58,21 @@ func (s *EcoSpold) ElementaryExchanges() []ElementaryExchange {
 func (s *EcoSpold) FindElementaryExchange(name string) *ElementaryExchange {
 	exchanges := s.ElementaryExchanges()
 	for i := range exchanges {
-		e := exchanges[i]
+		e := &exchanges[i]
 		if e.Name == name {
-			return &e
+			return e
+		}
+	}
+	return nil
+}
+
+// FindProperty searches for a property with the given name in an exchange.
+func (e *Exchange) FindProperty(name string) *Property {
+	properties := e.Properties
+	for i := range properties {
+		p := &properties[i]
+		if p.Name == name {
+			return p
 		}
 	}
 	return nil
