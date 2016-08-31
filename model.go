@@ -16,6 +16,8 @@ type ActivityDataSet struct {
 	Description     *ActivityDescription `xml:"activityDescription>activity"`
 	Classifications []Classification     `xml:"activityDescription>classification"`
 	Geography       *Geography           `xml:"activityDescription>geography"`
+	Technology      *Technology          `xml:"activityDescription>technology"`
+	TimePeriod      *TimePeriod          `xml:"activityDescription>timePeriod"`
 	FlowData        *FlowData            `xml:"flowData,omitempty"`
 }
 
@@ -47,6 +49,20 @@ type Geography struct {
 
 	ShortName string        `xml:"shortname,omitempty"`
 	Comment   *TextAndImage `xml:"comment,omitempty"`
+}
+
+// Technology contains information about the process technology.
+type Technology struct {
+	Level   int           `xml:"technologyLevel,attr"`
+	Comment *TextAndImage `xml:"comment,omitempty"`
+}
+
+// TimePeriod contains information about the process time.
+type TimePeriod struct {
+	StartDate                  string        `xml:"startDate,attr"`
+	EndDate                    string        `xml:"endDate,attr"`
+	IsDataValidForEntirePeriod bool          `xml:"isDataValidForEntirePeriod,attr"`
+	Comment                    *TextAndImage `xml:"comment,omitempty"`
 }
 
 // TODO: time etc.

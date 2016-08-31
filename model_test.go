@@ -19,6 +19,20 @@ func TestReadModel(t *testing.T) {
 	t.Log(string(data))
 }
 
+func TestTechnologyAndTime(t *testing.T) {
+	spold := example(t)
+	techComment := spold.DataSet.Technology.Comment.Texts[0].Value
+	if techComment != "tech. desc." {
+		t.Error("Technology comment not found")
+		return
+	}
+	time := spold.DataSet.TimePeriod
+	if time.StartDate != "2016-03-04" || time.EndDate != "2016-03-25" {
+		t.Error("Could not read time period")
+		return
+	}
+}
+
 func TestElementaryExchanges(t *testing.T) {
 	spold := example(t)
 	if spold.DataSet.FlowData == nil {
