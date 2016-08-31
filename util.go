@@ -53,6 +53,19 @@ func (s *EcoSpold) ElementaryExchanges() []ElementaryExchange {
 	return flows.ElementaryExchanges
 }
 
+// FindElementaryExchange searches for an elementary flow with the given
+// name in the data set.
+func (s *EcoSpold) FindElementaryExchange(name string) *ElementaryExchange {
+	exchanges := s.ElementaryExchanges()
+	for i := range exchanges {
+		e := exchanges[i]
+		if e.Name == name {
+			return &e
+		}
+	}
+	return nil
+}
+
 // GetDataSet returns the data set or child data set that is stored in the
 // EcoSpold document.
 func (s *EcoSpold) GetDataSet() *ActivityDataSet {

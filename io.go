@@ -19,7 +19,7 @@ func ReadFile(fileName string) (*EcoSpold, error) {
 
 // EachFile parses each file in the given folder and calls the given handler
 // with the data sets from respective files.
-func EachFile(folder string, fn func(*ActivityDataSet) error) error {
+func EachFile(folder string, fn func(*EcoSpold) error) error {
 	files, err := ioutil.ReadDir(folder)
 	if err != nil {
 		return err
@@ -30,7 +30,7 @@ func EachFile(folder string, fn func(*ActivityDataSet) error) error {
 		if err != nil {
 			return err
 		}
-		if err = fn(spold.GetDataSet()); err != nil {
+		if err = fn(spold); err != nil {
 			return err
 		}
 	}

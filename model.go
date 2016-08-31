@@ -95,11 +95,19 @@ type IntermediateExchange struct {
 	ActivityLinkID string `xml:"activityLinkId,attr"`
 }
 
+// Compartment contains the compartment information of an elementary flow
+type Compartment struct {
+	ID             string `xml:"subcompartmentId,attr"`
+	Compartment    string `xml:"compartment"`
+	SubCompartment string `xml:"subcompartment"`
+}
+
 // ElementaryExchange are environmental inputs and outputs of a process
 type ElementaryExchange struct {
 	Exchange
-	CAS        string `xml:"casNumber,attr,omitempty"`
-	ExchangeID string `xml:"elementaryExchangeId,attr"`
+	CAS         string       `xml:"casNumber,attr,omitempty"`
+	ExchangeID  string       `xml:"elementaryExchangeId,attr"`
+	Compartment *Compartment `xml:"compartment,omitempty"`
 }
 
 // Property contains additional information about an exchange.

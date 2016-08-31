@@ -44,7 +44,8 @@ import (
 
 func main() {
 	dir := "folder/with/datasets"
-	err := spold2.EachFile(dir, func(ds *spold2.ActivityDataSet) error {
+	spold2.EachFile(dir, func(spold *spold2.EcoSpold) error {
+		ds := spold.GetDataSet()
 		fmt.Println(ds.Description.Name)
 		return nil
 	})

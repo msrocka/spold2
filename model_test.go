@@ -61,6 +61,13 @@ func TestExchangeGroup(t *testing.T) {
 	}
 }
 
+func TestCompartment(t *testing.T) {
+	e := example(t).FindElementaryExchange("Chlorine")
+	if e.Compartment.SubCompartment != "in water" {
+		t.Error("Could not find compartment in", e.Name)
+	}
+}
+
 func TestRefFlow(t *testing.T) {
 	spold := example(t)
 	ref := spold.RefFlow()
