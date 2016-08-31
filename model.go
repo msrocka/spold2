@@ -76,13 +76,15 @@ type FlowData struct {
 // Exchange contains the common information of intermediate and elementary
 // exchanges.
 type Exchange struct {
-	ID         string     `xml:"id,attr"`
-	UnitID     string     `xml:"unitId,attr"`
-	Amount     float64    `xml:"amount,attr"`
-	Name       string     `xml:"name"`
-	UnitName   string     `xml:"unitName"`
-	Comment    string     `xml:"comment,omitempty"`
-	Properties []Property `xml:"property"`
+	ID          string     `xml:"id,attr"`
+	UnitID      string     `xml:"unitId,attr"`
+	Amount      float64    `xml:"amount,attr"`
+	Name        string     `xml:"name"`
+	UnitName    string     `xml:"unitName"`
+	Comment     string     `xml:"comment,omitempty"`
+	Properties  []Property `xml:"property"`
+	OutputGroup *int       `xml:"outputGroup,omitempty"`
+	InputGroup  *int       `xml:"inputGroup,omitempty"`
 }
 
 // IntermediateExchange comprises intermediate product and waste inputs and

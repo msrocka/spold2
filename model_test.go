@@ -33,6 +33,42 @@ func TestTechnologyAndTime(t *testing.T) {
 	}
 }
 
+func TestExchangeGroup(t *testing.T) {
+	spold := example(t)
+	count := 0
+	for _, e := range spold.ElementaryExchanges() {
+		if e.Name == "1,1,1,2-Tetrachloroethane" {
+			if *e.OutputGroup != 4 {
+				t.Error("Wrong outputGroup for", e.Name)
+			}
+			if e.InputGroup != nil {
+				t.Error("Wrong inputGroup for", e.Name)
+			}
+			count++
+		}
+		if e.Name == "Chlorine" {
+			if *e.InputGroup != 4 {
+				t.Error("Wrong inputGroup for", e.Name)
+			}
+			if e.OutputGroup != nil {
+				t.Error("Wrong outputGroup for", e.Name)
+			}
+			count++
+		}
+	}
+	if count != 2 {
+		t.Error("Did not found all elementary flows")
+	}
+}
+
+func TestRefFlow(t *testing.T) {
+	spold := example(t)
+	ref := spold.RefFlow()
+	if ref.Name != "Test product flow" {
+		t.Error("Did not found reference flow")
+	}
+}
+
 func TestElementaryExchanges(t *testing.T) {
 	spold := example(t)
 	if spold.DataSet.FlowData == nil {
