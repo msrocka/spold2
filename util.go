@@ -17,7 +17,7 @@ func (s *EcoSpold) RefFlow() *IntermediateExchange {
 		if group != 0 {
 			continue
 		}
-		if f.Amount > 0 {
+		if f.Amount != 0 {
 			return &f
 		}
 		if candidate == nil {
