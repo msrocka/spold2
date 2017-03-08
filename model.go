@@ -91,7 +91,9 @@ type Exchange struct {
 // outputs for the activity.
 type IntermediateExchange struct {
 	Exchange
-	ExchangeID     string `xml:"intermediateExchangeId,attr"`
+
+	// FlowID is the value of the intermediateExchangeId attribute
+	FlowID         string `xml:"intermediateExchangeId,attr"`
 	ActivityLinkID string `xml:"activityLinkId,attr"`
 }
 
@@ -105,8 +107,10 @@ type Compartment struct {
 // ElementaryExchange are environmental inputs and outputs of a process
 type ElementaryExchange struct {
 	Exchange
+
+	// FlowID is the value of the elementaryExchangeId attribute
+	FlowID      string       `xml:"elementaryExchangeId,attr"`
 	CAS         string       `xml:"casNumber,attr,omitempty"`
-	ExchangeID  string       `xml:"elementaryExchangeId,attr"`
 	Compartment *Compartment `xml:"compartment,omitempty"`
 }
 
