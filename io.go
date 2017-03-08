@@ -2,6 +2,7 @@ package spold2
 
 import (
 	"encoding/xml"
+	"errors"
 	"io/ioutil"
 	"path/filepath"
 )
@@ -14,6 +15,10 @@ func ReadFile(fileName string) (*EcoSpold, error) {
 	}
 	spold := &EcoSpold{}
 	err = xml.Unmarshal(data, spold)
+	if err != nil {
+		return nil, errors.New("failed to read file " +
+			fileName + ": " + err.Error())
+	}
 	return spold, err
 }
 
